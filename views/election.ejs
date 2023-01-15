@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="csrf-token" content="<%= csrfToken %>" />
+    <title>My Voting App</title>
+  </head>
+  <body style="background-color:#f5f5f5"></body>
+    <%- include('header.ejs') %>
+    <div style="float:right" class="flex-none">
+      <a href="/signout" class="px-4 text-blue-900 p-2 font-bold text-xl"
+        >Sign Out</a
+      >
+    </div>
+    <div style="float: left">     
+      <a href="create" class="border-gray-600">
+          <button class="rounded bg-green-600 h-10 px-2 mt-2 ml-5 text-2xl " >Create new election</button>
+      </a>
+      <div style="float: left; width: 100%">
+        <div class="ml-10 mt-20 px-20 py-10 border border-gray-600 py-10 max-w-2md">
+          <h1 class="font-bold text-2xl">Elections</h1>
+            <%- include('allele.ejs',{ data: newelections1 }) %>
+        </div>
+      </div>
+  </div>     
+  </body>
+</html>
